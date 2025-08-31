@@ -1,6 +1,8 @@
 package com.example.meepmeeptesting;
 
 import com.acmerobotics.roadrunner.Pose2d;
+import com.acmerobotics.roadrunner.TranslationalVelConstraint;
+import com.acmerobotics.roadrunner.Vector2d;
 import com.noahbres.meepmeep.MeepMeep;
 import com.noahbres.meepmeep.roadrunner.DefaultBotBuilder;
 import com.noahbres.meepmeep.roadrunner.entity.RoadRunnerBotEntity;
@@ -20,9 +22,9 @@ public class MeepMeepTesting {
                 .lineToY(30)
                 .turn(Math.toRadians(90))
                 .lineToX(0)
-                .turn(Math.toRadians(90))
-                .lineToY(0)
-                .turn(Math.toRadians(90))
+                .strafeToLinearHeading(new Vector2d(-50,-30),Math.toRadians(90),new TranslationalVelConstraint(90))
+                .waitSeconds(2)
+                .splineToSplineHeading(new Pose2d(20,20,Math.toRadians(90)),Math.toRadians(0))
                 .build());
 
         meepMeep.setBackground(MeepMeep.Background.FIELD_INTO_THE_DEEP_JUICE_DARK)
