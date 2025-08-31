@@ -33,6 +33,7 @@ public class YourSampleAuton extends LinearOpMode {
                 .strafeToLinearHeading(new Vector2d(-58,57),Math.toRadians(315))
                 .build();
 
+        //Calling path2 ASSUMES the robot is at (-58,57) BEFORE the path is run as shown below
         Action path2 = drive.actionBuilder(new Pose2d(-58, 57, Math.toRadians(315)))
                 .strafeToLinearHeading(new Vector2d(-35,49),Math.toRadians(0))
                 .build();
@@ -65,7 +66,7 @@ public class YourSampleAuton extends LinearOpMode {
                         ),
 
 
-                        //----------Do the first Path!----------\\
+                        //----------Do the second Path!----------\\
 
                         //Runs path 2 *AFTER*
                         //(motor moves to position 2 *WHILE* servo moves to position 2)
