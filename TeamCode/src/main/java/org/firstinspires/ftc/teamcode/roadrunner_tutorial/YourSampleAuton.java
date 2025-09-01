@@ -14,7 +14,7 @@ import org.firstinspires.ftc.teamcode.MecanumDrive;
 import org.firstinspires.ftc.teamcode.roadrunner_tutorial.base_subsystem_templates.*;
 
 @Config
-@Autonomous(name = "Your Own Autonomous!", group = "Autonomous")
+@Autonomous(name = "Your Own Autonomous!")
 public class YourSampleAuton extends LinearOpMode {
 
 
@@ -39,8 +39,7 @@ public class YourSampleAuton extends LinearOpMode {
                 .build();
 
 
-
-        // Initialize
+        // Initialize (What happens before when you press start)
         Actions.runBlocking(
                 new SequentialAction(
                     servo.toPos1(),
@@ -48,16 +47,15 @@ public class YourSampleAuton extends LinearOpMode {
                 )
         );
 
-
         waitForStart();
 
         if (isStopRequested()) return;
 
-
+        //Run (What happens when you press start)
         Actions.runBlocking(
                 new SequentialAction(
 
-                        //----------Do the first Path!----------\\
+                        //----------First Path!----------\\
 
                         //Runs path 1 *WHILE* motor moves to position 3
                         new ParallelAction(
@@ -66,7 +64,7 @@ public class YourSampleAuton extends LinearOpMode {
                         ),
 
 
-                        //----------Do the second Path!----------\\
+                        //----------Second Path!----------\\
 
                         //Runs path 2 *AFTER*
                         //(motor moves to position 2 *WHILE* servo moves to position 2)
